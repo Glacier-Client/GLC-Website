@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@200&family=Montserrat:wght@500;800;900&family=Oswald:wght@200&family=Outfit:wght@400;702&family=Roboto:wght@100&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #171716;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f46c7;
+    border-radius: 50px;
+  }
+li, a, button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%; 
+    background-color: #171716;
+}
+.navlogo{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #1f46c7;
+}
+
+
+button{
+    padding: 9px 25px;
+    background-color: rgba(31, 70, 199, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover{
+    background-color: rgba(31, 70, 199, 0.8);
+}
+
+
+
+.HeaderDownload{
+  Color: white;
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px;
+  text-align: center;
+}
+
+.Entry{
+    background-image: url(Images/MainPageImg.png) repeat 0 0;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    height: 1080px;
+    background-repeat: no-repeat;
+}
+.Entry h1{
+  padding-top: 340px;
+  font-size: 100px;
+  box-shadow: #000;
+  text-shadow: 1px 10px 50px;
+}
+.Entry p{
+    font-size: 16px;
+    padding-top: 20px;
+}
+.ContainerDown{
+  padding-bottom: 150px;
+  padding-top: 150px;
+ }
+
+ .box{
+    max-width: 1900px;
+    margin:auto;
+    background: #000;
+    border-radius: 7px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,.3);
+ }
+ 
+ .box .heading{
+    background: #1f46c7;
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+ }
+ 
+ .faqs{
+    padding: 0px 20px 20px;
+ }
+ 
+ ::-webkit-details-marker{
+    float: right;
+    margin-top: 3px;
+ }
+ 
+ details{
+    background: #131313;
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: white;
+ }
+ 
+ details summary{
+    outline: none;
+    font-size: 25px;
+ }
+ 
+
+ .module{
+     Height: 300px;
+     font-family: 'Montserrat',sans-serif;
+     margin: 10px;
+     border: 1mm solid rgba(31, 70, 199, 1);
+     transition: ease .5s;
+     border-radius: 30px;
+     overflow-y: hidden;
+     padding-right: 55px;
+     padding-bottom: 30px;
+ }
+ .module h1{
+     color: white;
+     padding-top: 70px;
+     padding-left: 50px;
+     font-size: 50px;
+ }
+
+ .module p{
+     color: white;
+     padding-top: 40px;
+     padding-left: 55px;
+     font-size: 15px;
+ }
+ .module:hover{
+    transform: scale(1.01);
+ }
+
+ .footer{
+     font-family: 'Montserrat',sans-serif;
+     padding: 40px 0;
+     background-color: #131313;
+     text-decoration: none;
+     width: 100%;
+     bottom: 0;
+    display: block;
+
+ }
+ .footer .social{
+     text-align: center;
+     padding-bottom: 25px;
+     color: #fff;
+ }
+ .footer .social a{
+     font-size: 24px;
+     color: inherit;
+     width: 40px;
+     height: 40px;
+     line-height: 38px;
+     display: inline-block;
+     text-align: center;
+     border-radius: 30px;
+     margin: 0 8px;
+     opacity: 0.75;
+     transition: 0.5s;
+ }
+ .footer .social a:hover{
+     opacity: 1;
+ }
+
+ .footer ul{
+     margin-top: 0;
+     padding: 0;
+     list-style: none;
+     font-size: 19px;
+     line-height: 1.6;
+     margin-bottom: 0;
+     text-align: center;
+ }
+ .footer ul li a{
+     color: inherit;
+     text-decoration: none;
+     opacity: 1;
+ }
+
+ .footer ul li{
+     display: inline-block;
+     padding: 0 15px;
+
+ }
+ .footer ul a:hover{
+     opacity: 0.8;
+ }
+ .dmod{
+    font-family: 'Montserrat',sans-serif;
+    margin: 10px;
+    border: 1mm solid rgba(31, 70, 199, 1);
+    transition: ease .5s;
+    border-radius: 30px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    max-Height: 350px;
+    max-width: 10000px;
+}
+.dmod h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.dmod p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+.dmod i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.dmod:hover{
+   transform: scale(1.01);
+}
+.hamburger {
+    display: none;
+    padding: 9px 25px;
+    position: absolute;
+    right: 10px;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin: 5px 0px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-color: #fff;
+    border-radius: 15px;
+    
+}
+
+.nav-menu {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    list-style:none;
+}
+
+.nav-item {
+    margin-left: 5rem;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+.nav-link:hover{
+    color: #482ff7;
+}
+.navbar2{
+    display: none;
+}
+.staff{
+color: white;
+text-align:center;
+overflow: hidden;
+}
+.staff-con{
+    min-height: 400px;
+    border-radius: 30px;
+    margin: 30px;
+
+    border: 2px solid #1f46c7;
+}
+.staff-skin:hover{
+    transform:scale(1.04);
+}
+.staff-roles{
+    overflow:hidden;
+}
+.staff-con h1{
+    text-align: center;
+    padding: 20px;
+}
+.staff-pfp p{
+    text-align: center;
+    padding: 15px;
+}
+ .staff-pfp{
+     display: inline-block;
+     text-align: center;
+    width: inherit;
+ }
+.staff-skin{
+        transition: ease-in-out 0.2s;
+        padding: 5px;
+}
+.question{
+    font-size: 30px;
+    padding: 20px;
+}
+
+
+    @media screen and (max-width:925px){
+        .nav__links{
+            display: none;
+        }
+        button{
+            display: none;
+                 }
+                 header{
+                    padding: 0px 0px 0px 10%;
+                    height: 100px;
+                }
+                .header2{
+                    color: white;
+                    display: flex;
+                }
+           
+                   
+                .nav-menu {
+                    position: absolute;
+                    right: -100%;
+                    top: 5rem;
+                    top: 110px;
+                    flex-direction: column;
+                    background-color: #131313;
+                    width: 50%;
+                    border-radius: 10px;
+                    text-align: center;
+                    transition: 0.3s;
+                    color: white;
+                    box-shadow:
+                        0 10px 27px rgba(0, 0, 0, 0.05);
+                }
+            
+                .nav-menu.active {
+                    right: 0;
+                    display: block;
+                }
+               .nav-menu{
+                   display: none;
+               }
+               .nav-item {
+                   margin: 2.5rem 0;
+                   color: white;
+               }
+               .navbar2{
+                   display: block;
+               }
+           
+               .hamburger {
+                   display: block;     
+                   cursor: pointer;
+               }
+           
+               .hamburger.active .bar:nth-child(2) {
+                   opacity: 0;
+                   margin-left: 20px;
+                   transition: 0.3s;
+           
+               }
+           
+               .hamburger.active .bar:nth-child(1) {
+                   -webkit-transform: rotate(-45deg) translate(-9px,6px);
+                   transform: rotate(-45deg) translate(-9px,6px);
+               }
+           
+               .hamburger.active .bar:nth-child(3) {
+                   -webkit-transform: rotate(45deg) translate(-9px,-6px);
+                   transform: rotate(45deg) translate(-9px,-6px);
+               }
+    }
+    @media only screen and (max-width: 350px){
+        .staff-pfp img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+
+
+
