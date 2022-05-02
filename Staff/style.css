@@ -182,8 +182,9 @@ button:hover{
      background-color: #131313;
      text-decoration: none;
      width: 100%;
+     position: relative;
      bottom: 0;
-    display: block;
+     display: block;
 
  }
  .footer .social{
@@ -342,7 +343,8 @@ overflow: hidden;
  .staff-pfp{
      display: inline-block;
      text-align: center;
-    width: inherit;
+     width: inherit;
+     padding: 0 30px;
  }
 .staff-skin{
         transition: ease-in-out 0.2s;
@@ -429,6 +431,19 @@ overflow: hidden;
             width: 200px;
             height: 200px;
         }
+        .staff-pfp{
+            padding: 0;
+        }
+    }
+    @media only screen and (max-width: 250px){
+        .staff-pfp img{
+            width: 100px;
+            height: 100px;
+        }
+        .staff-con h1{
+            font-size: 20px
+        }
+
     }
 
 

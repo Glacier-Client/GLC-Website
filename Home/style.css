@@ -142,6 +142,8 @@ button:hover{
      background-color: #131313;
      text-decoration: none;
      width: 100%;
+     position: relative;
+     bottom:0;
  }
  .footer .social{
      text-align: center;
@@ -231,6 +233,123 @@ button:hover{
 .navbar2{
     display: none;
 }
+.discord-container{
+    height: 700px;
+    overflow-y: hidden;
+    width: 100%;
+    display: inline-block;
+
+}
+
+.discord-container iframe{
+    float: right;
+    padding-right: 75px;
+    padding-top: 100px;
+    padding-bottom: 0px;
+    padding-left: 75px;
+    height:700px;
+
+}
+.discord-text {
+    color: white;
+    font-size: 50px;
+    margin-left: 100px;
+    margin-top: 300px;
+}
+.discord-left-container{
+    float: left;
+    overflow: hidden;
+}
+.discord-text2{
+    display: none;
+}
+  .blue-button {
+    font-weight: 400;
+    font-size: 11pt;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 45px;
+    margin-left: 100px;
+    width: 250px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .blue-button {
+    background-color: #7289da;
+    border: 2px solid #7289da;
+    color: #fff;
+    
+  }
+  .blue-button:hover
+ {
+  transform: translateY(1px);
+  background-color: #6378c4;
+  border: 2px solid #6378c4;
+}
+
+.blue-button:active{
+  transform: translateY(2px);
+}
+.blue-button2 {
+    font-weight: 400;
+    font-size: 11pt;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 45px;
+    margin: 0 auto;
+    width: 250px;
+    display: none;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .blue-button2 {
+    background-color: #7289da;
+    border: 2px solid #7289da;
+    color: #fff;
+    
+  }
+  .blue-button2:hover
+ {
+  transform: translateY(1px);
+  background-color: #6378c4;
+  border: 2px solid #6378c4;
+}
+
+.blue-button2:active{
+  transform: translateY(2px);
+}
+
+.trailer h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+}
+.trailer{
+    background-color: #1f1f1f;
+    padding: 20px;
+    height: 600px;
+    padding-top: 50px;
+}
+.trailer iframe{
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:560px;
+    height:315px;
+
+
+}
+.trailer a{
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -266,7 +385,6 @@ button:hover{
         display: grid;
         place-items: center;
      }
- 
 
     }
     @media only screen and (max-width:925px){
@@ -338,5 +456,115 @@ button:hover{
                    -webkit-transform: rotate(45deg) translate(-9px,-6px);
                    transform: rotate(45deg) translate(-9px,-6px);
                }
-    }
 
+
+    }
+@media only screen and (max-width:1000px){
+    .blue-button2{
+        display: none;
+        
+
+    }
+    .discord-text2{
+        color: white;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: block;
+        font-size: 40px;
+    }
+    .discord-container iframe{
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+
+    }
+    .blue-button{
+        display: none;
+    }
+    .discord-left-container{
+        display: none;
+    }
+    .discord-container{
+        padding: 0px;
+    }
+}
+@media only screen and (max-width:600px){
+    
+
+    .trailer iframe{
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:460px;
+        height:215px;
+    
+    }
+    .trailer a{
+        display: flex;
+    }
+}
+@media only screen and (max-width:500px){
+    
+
+    .trailer iframe{
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:375px;
+        height:165px;
+    
+    }
+}
+@media only screen and (max-width:400px){
+    
+
+    .trailer iframe{
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:280px;
+        height:165px;
+    
+    }
+}
+@media only screen and (max-width:300px){
+    
+
+    .trailer iframe{
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:200px;
+        height:165px;
+    
+    }
+    .trailer h1{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:200px){
+    
+
+    .trailer iframe{
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100px;
+        height:75px;
+    
+    }
+    .trailer h1{
+        font-size: 20px;
+    }
+}
