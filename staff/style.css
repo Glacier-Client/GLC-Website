@@ -344,7 +344,7 @@ overflow: hidden;
      display: inline-block;
      text-align: center;
      width: inherit;
-     padding: 0 30px;
+     padding: 0 100px;
  }
 .staff-skin{
         transition: ease-in-out 0.2s;
@@ -427,6 +427,15 @@ overflow: hidden;
                }
     }
     @media only screen and (max-width: 350px){
+        .staff-pfp img{
+            width: 200px;
+            height: 200px;
+        }
+        .staff-pfp{
+            padding: 0;
+        }
+    }
+    @media only screen and (max-width: 550px){
         .staff-pfp img{
             width: 200px;
             height: 200px;
