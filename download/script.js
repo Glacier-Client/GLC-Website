@@ -23,6 +23,10 @@ let  form = document.forms['fixScript'];
 let menu = form.option;
 let options = form.option.options;
 
+document.getElementById("2").disabled = true; 
+document.getElementById("3").disabled = true; 
+document.getElementById("4").disabled = true; 
+
 const btn = document.querySelector('#btn');
 btn.onclick = (event) => {
     event.preventDefault();
