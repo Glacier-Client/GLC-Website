@@ -30,7 +30,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%; 
-    background-color: #171716;
+    background-color: #000;
 }
 .navlogo{
     height: 40px;
@@ -86,14 +86,15 @@ button:hover{
     color: white;
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    height: 1080px;
+    height: 850px;
     padding-top: 150px;
     background-repeat: no-repeat;
 }
 .Entry h1{
   font-size: 100px;
-  box-shadow: #000;
-  text-shadow: 1px 10px 50px;
+  box-shadow: blue;
+  color: white;
+  text-shadow: 2px 2px 25px #000000;
 }
 .Entry p{
     font-size: 16px;
@@ -102,6 +103,20 @@ button:hover{
 .Entry img{
     width: 200px;
     height: 200px;
+}
+.entry-btn-download{
+    height: 60px;
+    border-radius: 30px;
+    width: 175px;
+}
+.entry-btn-store{
+    height: 60px;
+    border-radius: 30px;
+    width: 175px;
+}
+.entry-btn-download:hover,.entry-btn-store:hover{
+    transform:translateY(-2px);
+    opacity:95%;
 }
 .ContainerDown{
   padding-bottom: 150px;
@@ -139,7 +154,7 @@ button:hover{
  .footer{
      font-family: 'Montserrat',sans-serif;
      padding: 40px 0;
-     background-color: #131313;
+     background-color: #000;
      text-decoration: none;
      width: 100%;
 

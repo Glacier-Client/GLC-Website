@@ -31,7 +31,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%; 
-    background-color: #171716;
+    background-color: #000;
 }
 .navlogo{
     height: 40px;
@@ -179,7 +179,7 @@ button:hover{
  .footer{
      font-family: 'Montserrat',sans-serif;
      padding: 40px 0;
-     background-color: #131313;
+     background-color: #000;
      text-decoration: none;
      width: 100%;
      position: relative;
@@ -355,11 +355,39 @@ overflow: hidden;
     padding: 20px;
 }
 
+.blue-button {
+    font-weight: 400;
+    font-size: 11pt;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 45px;
+    width: 250px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .blue-button {
+    background-color: #7289da;
+    border: 2px solid #7289da;
+    color: #fff;
+    
+  }
+  .blue-button:hover
+ {
+  transform: translateY(1px);
+  background-color: #6378c4;
+  border: 2px solid #6378c4;
+}
+
+.blue-button:active{
+  transform: translateY(2px);
+}
+
 
     @media screen and (max-width:925px){
         .nav__links{
             display: none;
         }
+
         button{
             display: none;
                  }
@@ -433,6 +461,9 @@ overflow: hidden;
         }
         .staff-pfp{
             padding: 0;
+        }
+        .question{
+            font-size: 15px;
         }
     }
     @media only screen and (max-width: 550px){

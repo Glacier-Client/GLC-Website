@@ -37,7 +37,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 3%; 
-    background-color: var(--background-color);
+    background-color: #000;
 }
 .navlogo{
     height: 40px;
@@ -165,7 +165,7 @@ hr.rounded{
  .footer{
      font-family: 'Montserrat',sans-serif;
      padding: 40px 0;
-     background-color: #131313;
+     background-color: #000;
      text-decoration: none;
      position: sticky;
      top: 100%;

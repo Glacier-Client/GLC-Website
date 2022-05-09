@@ -34,7 +34,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%; 
-    background-color: #171716;
+    background-color: #000;
 }
 .navlogo{
     height: 40px;
@@ -182,7 +182,7 @@ button:hover{
  .footer{
      font-family: 'Montserrat',sans-serif;
      padding: 40px 0;
-     background-color: #131313;
+     background-color: #000;
      text-decoration: none;
      width: 100%;
 
