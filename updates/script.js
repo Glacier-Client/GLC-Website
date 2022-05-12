@@ -10,3 +10,7 @@ function mobileMenu() {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 }
+
+function autoResize(iframe) {
+    $(iframe).height($(iframe).contents().find('html').height());
+}
