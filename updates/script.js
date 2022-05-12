@@ -10,12 +10,3 @@ function mobileMenu() {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 }
-
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
-
-function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
