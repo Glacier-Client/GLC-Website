@@ -86,7 +86,7 @@ button:hover{
     color: white;
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    height: 850px;
+    height: 900px;
     padding-top: 150px;
     background-repeat: no-repeat;
 }
@@ -405,7 +405,7 @@ button:hover{
         .nav__links{
             display: none;
         }
-        button{
+        .cta{
             display: none;
                  }
                  header{
@@ -432,6 +432,10 @@ button:hover{
                    box-shadow:
                        0 10px 27px rgba(0, 0, 0, 0.05);
                }
+                
+                .entry-btn-store{
+                    padding: 10px;
+                }
            
                .nav-menu.active {
                    right: 0;
@@ -532,6 +536,15 @@ button:hover{
         width:375px;
         height:165px;
     
+    }
+    .Entry{
+        height: 1000px;
+    }
+    .Entry h1{
+        font-size: 60px;
+    }
+    .entry-btn-store{
+        margin: 20px;
     }
 }
 @media only screen and (max-width:400px){

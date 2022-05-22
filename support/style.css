@@ -111,20 +111,21 @@ button:hover{
 input[type=text]{
     border-radius: 10px;
     padding: 30px;
-
+    width: 100%;
     border: 2px solid var(--main-color);
 }
 input[type=email]{
     border-radius: 10px;
     padding: 30px;
     border: 2px solid var(--main-color);
+    width: 100%;
+    
 }
 #textarea {
-    border: none;
     padding: 30px;
-    
     border: 2px solid var(--main-color);
     border-radius: 10px;
+    width: 100%;
 }
 hr.rounded{
     border-radius: 15px;
@@ -156,6 +157,8 @@ hr.rounded{
     display: grid;
     place-items: center;
 }
+
+
 .container h1{
     font-size: 50px;
     padding: 30px;
@@ -303,6 +306,7 @@ hr.rounded{
 }
 .navbar2{
     display: none;
+
 }
 .staff{
 color: white;
@@ -412,6 +416,7 @@ color: white;
                .nav-item {
                    margin: 2.5rem 0;
                    color: var(--text-color);
+                   text-decoration: none;
                }
                .navbar2{
                    display: block;
