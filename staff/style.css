@@ -393,12 +393,15 @@ hr.rounded {
  .profile:hover{
     transform: scale(1.01);
  }
+
  .profile button {
-     text-align: center;
-     margin: 0 auto;
-    display: flex;
-    align-items: center;
- }
+    text-align: center;
+    margin: 0 auto;
+   display: flex;
+   align-items: center;
+   display: none;
+}
+
 
  .modal-close.show{
      opacity: 1;
@@ -589,7 +592,10 @@ hr.rounded {
 
 
         }
-
+        .profile button {
+            display: block;
+        }
+       
         .modal:target {
             visibility: visible;
             opacity: 1;
