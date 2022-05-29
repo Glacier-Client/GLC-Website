@@ -61,15 +61,7 @@ function myKrezio(){
     document.getElementById("quote").innerHTML = '"A Frog"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/775986083871064075";
 }
-function myFalk(){
-    document.getElementById("profile-modal").style.display="block";
-    document.getElementById("username").innerHTML = "Falkreon"
-    document.getElementById("role").innerHTML = "Admin"
-    document.getElementById("discord").innerHTML = "Discord: Yugo#9897"
-    document.getElementById("email").innerHTML = "Email: example@glacierclient.net"
-    document.getElementById("quote").innerHTML = '"Some Random"'
-    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/";
-}
+
 function myFelix(){
     document.getElementById("profile-modal").style.display="block";
     document.getElementById("username").innerHTML = "Felix"
