@@ -127,6 +127,11 @@ input[type=email]{
     border-radius: 10px;
     width: 100%;
 }
+.containerforform form{
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px;
+}
 hr.rounded{
     border-radius: 15px;
     height: 7px;
