@@ -5,10 +5,10 @@
 Made for the Glacier Client Website.
 
 Each page is divided in its own folder with the following names:
-/index.html/
-/style.css/
-/script.js/
-/images/
+- /index.html/
+- /style.css/
+- /script.js/
+- /images/
 
 Website developed by: Duke#6377 (mostly) & SpyMiner#0001.
 
