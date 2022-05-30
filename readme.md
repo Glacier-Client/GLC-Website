@@ -1,16 +1,17 @@
-## [INFO]
+## [INFORMATION]
 
-!!! Delete file if needed !!!
+! Delete file if needed necessary !
 
-Made for Glacier Client
+Made for the Glacier Client Website.
 
-Each section in its own folder:
-Script.js 
-Style.css
-Images
+Each page is divided in its own folder with the following names:
+/index.html/
+/style.css/
+/script.js/
+/images/
 
-Website made by: Duke#6377 (most of it!) && SpyMiner#0001
+Website developed by: Duke#6377 (mostly) & SpyMiner#0001.
 
  
-# DONT PUSH TO LIVE!!!
+# DO NOT PUSH TO LIVE!!!
 ## Create a pull request and we will merge it to live!
