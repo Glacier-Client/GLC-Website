@@ -84,8 +84,8 @@ button:hover{
      background-color: #000;
      text-decoration: none;
      width: 100%;
-     position:relative;
-     bottom: 0;
+
+
 
 
  }
@@ -212,6 +212,75 @@ color: white;
     height: 1000px;
     background-color: white;
 }
+.update{
+    color: white;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    
+    margin: auto;
+    vertical-align: middle;
+    margin: 40px;
+    background-position:center;
+    background-size: cover;
+    border-radius: 30px;
+}
+.update button{
+    position: absolute;
+    right: 75px;
+    margin: 0 auto;
+    text-align:left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+    width: 225px;
+    transition: 0.5s ease-in-out;
+    text-shadow: 1px 1px 35px #000000;
+}
+.update button span{
+    display: block;
+    float: right;
+    margin: 5px;
+
+}
+.update button:hover{
+    transform:translateY(-10px);
+    opacity: 1;
+}
+.update h1{
+    font-size: 40px;
+    padding-left: 20px;
+    margin-left: 20px;
+    text-shadow: 1px 1px 35px #000000;
+
+}
+.update p{
+    padding-left: 30px;
+    margin-left: 30px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 35px #000000;
+}
+.new{
+    background-color: #482ff7;
+    padding: 10px;
+    width: 30px;
+    font-size: 15px;
+    line-height: 0px;
+    border-radius: 10px;
+    margin: 25px;
+    text-align: center;
+
+}
+.update i{
+    margin-left: 30px;
+    padding-left: 30px;
+    text-shadow: 1px 1px 35px #000000;
+    font-size: 20px;
+    
+}
+
 
 
  @media only screen and (max-width:700px){

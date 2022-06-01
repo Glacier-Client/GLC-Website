@@ -4,6 +4,7 @@
     <meta name="description" content="1.8.9 Minecraft Client">
     <meta name="keywords" content="Glacier, Client, GlacierClient, Minecraft, 1.8.9" />
     <meta charset="UTF-8">
+    <script src="https://bs-community.github.io/skinview3d/js/skinview3d.bundle.js"></script>
     <link rel="icon" href="https://www.glacierclient.net/glclogo_16x16.png">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/f819475713.js" crossorigin="anonymous"></script>
@@ -60,10 +61,23 @@
             </ul>
         </nav>
 
-    <div class="coming">
-    <h1>Coming Soon...</h1>
-    </div>
-          </section>
+
+        <h1 class="coming">Coming Soon</h1>
+        <div class="cosmetic-preview" style="display:none;">
+            <h1>Preview</h1>
+        <canvas style="background-image: url('background.png');" id="skin_container">
+
+        </canvas>
+        <p id="cape-cosmetic">Cape: <span class="cape-name"></span></p>
+        </div>
+
+        <form id="form" onsubmit="return false;" style="display:none;">
+            <input  type="text" id="uuidInput" />
+            <input  type="submit" onclick="fetchCosmetics();" />
+        </form>
+        
+
+
           <section class="footer">
             <div class="social">
                 <a href="https://www.glacierclient.net/discord"><i class="fab fa-discord"></i></a>
@@ -93,6 +107,8 @@
                 </li>
             </ul>
             </section>
+
         <script src="script.js"></script>
+      
 </body>
 </html>

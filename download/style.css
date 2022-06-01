@@ -103,7 +103,7 @@ button:hover{
 }
 .ContainerDown{
   padding-bottom: 150px;
-  padding-top: 150px;
+  padding-top: 50px;
  }
 
  .box{
@@ -236,9 +236,17 @@ button:hover{
  .container44{
      padding: 0;
  }
+ .button-download{
+    cursor:pointer;
+     padding: 20px;
+     margin: 10px;
+     width: 50%;
+     border-radius: 10px;
+ }
  .dmod{
     font-family: 'Montserrat',sans-serif;
-    margin: 10px;
+    margin: 0 auto;
+    padding: 20px;
     border: 1mm solid rgba(31, 70, 199, 1);
     transition: ease .5s;
     border-radius: 30px;
@@ -246,9 +254,8 @@ button:hover{
     overflow-x: hidden;
     display: grid;
     place-items: center;
-    cursor: pointer;
-    max-Height: 350px;
-    max-width: 10000px;
+
+    max-width: 1200px;
 }
 .dmod h1{
     color: white;
@@ -268,6 +275,7 @@ button:hover{
     align-items: center;
     text-align: center;
     padding-top: 30px;
+    color: white;
 }
 
 .dmod:hover{
@@ -369,7 +377,7 @@ button submit{
 }
 .dmod2{
     font-family: 'Montserrat',sans-serif;
-    margin: 10px;
+    margin: 0 auto;
     border: 1mm solid rgba(31, 70, 199, 1);
     transition: ease .5s;
     border-radius: 30px;
@@ -377,8 +385,8 @@ button submit{
     overflow-x: hidden;
     display: grid;
     place-items: center;
-    height: 600px;
-    max-width: 10000px;
+    padding: 30px;
+    max-width: 1200px;
 }
 .dmod2 i{
     color: white;
@@ -529,5 +537,33 @@ hr.rounded {
     @media only screen and (max-width:600px){
         hr.rounded{
             width: 300px;
+        }
+    }
+    @media only screen and (max-width:400px){
+        .button-download{
+            cursor:pointer;
+            margin: 0;
+            padding: 20px;
+            width: 75%;
+            border-radius: 10px;
+            overflow: hidden;
+         }
+         .dmod2{
+             margin: 0;
+             overflow: hidden;
+         }
+         .dmod2 h1{
+            font-size: 35px;
+        }
+        .dmod2 p{
+            font-size: 15px;
+            text-align: center;
+            margin: 0;
+        }
+        hr.rounded{
+            width: 200px;
+        }
+        .HeaderDownload h1{
+            font-size: 30px;
         }
     }
