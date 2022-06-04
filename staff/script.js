@@ -29,7 +29,7 @@ function myYugo(){
     document.getElementById("role").innerHTML = "Owner"
     document.getElementById("discord").innerHTML = "Discord: Yugo#9897"
     document.getElementById("email").innerHTML = "Email: yugo@glacierclient.net"
-    document.getElementById("quote").innerHTML = '"Some Random"'
+    document.getElementById("quote").innerHTML = '"I found this client, I win"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/840004980517896242";
 
 }
@@ -39,7 +39,7 @@ function mySpy(){
     document.getElementById("role").innerHTML = "Owner/Developer"
     document.getElementById("discord").innerHTML = "Discord: SpyMiner#0001"
     document.getElementById("email").innerHTML = "Email: spyminer@glacierclient.net"
-    document.getElementById("quote").innerHTML = '"Literally the person who does all of the work 🙄"'
+    document.getElementById("quote").innerHTML = '"I may be drunk, Miss, but in the morning I will be sober and you will still be ugly."'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/418323201811152897";
 }
 function mySun(){
@@ -68,7 +68,7 @@ function myFelix(){
     document.getElementById("role").innerHTML = "Developer"
     document.getElementById("discord").innerHTML = "Discord: Felixmax_#6450"
     document.getElementById("email").innerHTML = "Email: felix@glacierclient.net"
-    document.getElementById("quote").innerHTML = '"The guy who makes the client"'
+    document.getElementById("quote").innerHTML = '"The guy who makes the wierd starty thing"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/460470667696013312";
 }
 function myDuke(){
