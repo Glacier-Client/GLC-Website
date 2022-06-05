@@ -60,6 +60,7 @@ function myKrezio(){
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"A Frog"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/775986083871064075";
+    console.log('test')
 }
 
 function myFelix(){
@@ -84,7 +85,7 @@ function myMoon(){
     document.getElementById("profile-modal").style.display="block";
     document.getElementById("username").innerHTML = "MoonStyle"
     document.getElementById("role").innerHTML = "Designer"
-    document.getElementById("discord").innerHTML = "Discord: Yugo#9897"
+    document.getElementById("discord").innerHTML = "Discord: BrokenMoon#2002"
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"Designs stuff"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/466862322581897226";
@@ -92,12 +93,13 @@ function myMoon(){
 }
 function myLumina(){
     document.getElementById("profile-modal").style.display="block";
-    document.getElementById("username").innerHTML = "vLumina"
-    document.getElementById("role").innerHTML = "Designer"
+    document.getElementById("username").innerHTML = "Lumina"
+    document.getElementById("role").innerHTML = "Developer"
     document.getElementById("discord").innerHTML = "Discord: Lumina#3384"
-    document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
-    document.getElementById("quote").innerHTML = '"Also designs stuff but more"'
+    document.getElementById("email").innerHTML = "Email: Lumina@glacierclient.net"
+    document.getElementById("quote").innerHTML = '"Dont you ever say anything about my babe JS"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/741623363612704789";
+
 }
 function myAustin(){
     document.getElementById("profile-modal").style.display="block";
@@ -108,4 +110,26 @@ function myAustin(){
     document.getElementById("quote").innerHTML = '"Talks I guess."'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/298226178576220170";
 }
+function myCreeper(){
+    document.getElementById("profile-modal").style.display="block";
+    document.getElementById("username").innerHTML = "thedcreeper"
+    document.getElementById("role").innerHTML = "Support"
+    document.getElementById("discord").innerHTML = "Discord: thedrcreeper#9892"
+    document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
+    document.getElementById("quote").innerHTML = '"N/A"'
+    document.getElementById("picture").src="https://cdn.discordapp.com/avatars/794279247396864000/09cdde75cfa885559d275a20d0c28b8a.png?size=2048";
+}
 
+function myGrilla(){
+    document.getElementById("profile-modal").style.display="block";
+    document.getElementById("username").innerHTML = "perionaa"
+    document.getElementById("role").innerHTML = "Support"
+    document.getElementById("discord").innerHTML = "Discord: Grilla#9143"
+    document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
+    document.getElementById("quote").innerHTML = '"N/A"'
+    document.getElementById("picture").src="https://cdn.discordapp.com/avatars/858336884312768512/1107fc4a0f3bde5efa7359867c08662a.png?size=2048";
+}
+/* test | will remain there cuz im lazy wont harm*/
+
+const Lumina = document.getElementById("Lumina");
+Lumina.addEventListener("click", myLumina);

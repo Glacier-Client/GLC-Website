@@ -267,7 +267,7 @@ overflow: hidden;
     width: 55%;
 }
 .staff-skin:hover{
-    transform:scale(1.04);
+    transform:scale(1.07);
 }
 .staff-roles{
     overflow:hidden;
@@ -607,3 +607,6 @@ hr.rounded {
 
 
 
+body {
+    zoom: 80%
+}
