@@ -85,7 +85,7 @@ function myMoon(){
     document.getElementById("profile-modal").style.display="block";
     document.getElementById("username").innerHTML = "MoonStyle"
     document.getElementById("role").innerHTML = "Designer"
-    document.getElementById("discord").innerHTML = "Discord: BrokenMoon#2002"
+    document.getElementById("discord").innerHTML = "Discord: BrokenMoon#2002    "
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"Designs stuff"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/466862322581897226";
@@ -117,8 +117,9 @@ function myCreeper(){
     document.getElementById("discord").innerHTML = "Discord: thedrcreeper#9892"
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"N/A"'
-    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/794279247396864000";
+    document.getElementById("picture").src="https://cdn.discordapp.com/avatars/794279247396864000/09cdde75cfa885559d275a20d0c28b8a.png?size=2048";
 }
+
 function myGrilla(){
     document.getElementById("profile-modal").style.display="block";
     document.getElementById("username").innerHTML = "perionaa"
@@ -126,5 +127,39 @@ function myGrilla(){
     document.getElementById("discord").innerHTML = "Discord: Grilla#9143"
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"N/A"'
-    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/858336884312768512";
+    document.getElementById("picture").src="https://cdn.discordapp.com/avatars/858336884312768512/1107fc4a0f3bde5efa7359867c08662a.png?size=2048";
 }
+/* test | will remain there cuz im lazy wont harm*/
+
+const Lumina = document.getElementById("Lumina");
+Lumina.addEventListener("click", myLumina);
+
+const grilla = document.getElementById("grilla")
+grilla.addEventListener("click", myGrilla);
+
+const myGrilla = document.getElementById("creeper")
+myGrilla.addEventListener("click", myCreeper);
+
+
+/*
+function userConstructer(username, role, discord, email, quote, picture){
+    
+    if(username || role || discord || email || quote || picture === null || NaN){
+        throw new Error("Missing argument");
+    }   
+
+
+    document.getElementById("profile-modal").style.display="block";
+    document.getElementById("username").innerHTML = username
+    document.getElementById("role").innerHTML = "Role: " + role
+    document.getElementById("discord").innerHTML = "Discord: " + discord
+    document.getElementById("email").innerHTML = "Email: " +email
+    document.getElementById("quote").innerHTML = '"${quote}"'
+    document.getElementById("picture").src=picture;
+
+
+}
+*/
+
+//TODO: implementation of userConstructer
+
