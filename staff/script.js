@@ -117,9 +117,8 @@ function myCreeper(){
     document.getElementById("discord").innerHTML = "Discord: thedrcreeper#9892"
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"N/A"'
-    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/794279247396864000
+    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/794279247396864000";
 }
-
 function myGrilla(){
     document.getElementById("profile-modal").style.display="block";
     document.getElementById("username").innerHTML = "perionaa"
