@@ -134,12 +134,6 @@ function myGrilla(){
 const Lumina = document.getElementById("Lumina");
 Lumina.addEventListener("click", myLumina);
 
-const grilla = document.getElementById("grilla")
-grilla.addEventListener("click", myGrilla);
-
-const myGrilla = document.getElementById("creeper")
-myGrilla.addEventListener("click", myCreeper);
-
 
 /*
 function userConstructer(username, role, discord, email, quote, picture){
