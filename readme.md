@@ -15,4 +15,4 @@ Website developed by: Duke#6377 (mostly) & SpyMiner#0001.
 
  
 # !DO NOT PUSH TO LIVE!
-## Create a pull request and we will merge it to live!
+## Production test server!
