@@ -29,7 +29,7 @@ function myYugo(){
     document.getElementById("role").innerHTML = "Owner"
     document.getElementById("discord").innerHTML = "Discord: Yugo#9897"
     document.getElementById("email").innerHTML = "Email: yugo@glacierclient.net"
-    document.getElementById("quote").innerHTML = '"I found this client, I win"'
+    document.getElementById("quote").innerHTML = '"I founded this client, I win"'
     document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/840004980517896242";
 
 }
