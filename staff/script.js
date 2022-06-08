@@ -117,7 +117,7 @@ function myCreeper(){
     document.getElementById("discord").innerHTML = "Discord: thedrcreeper#9892"
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"N/A"'
-    document.getElementById("picture").src="https://cdn.discordapp.com/avatars/794279247396864000/09cdde75cfa885559d275a20d0c28b8a.png?size=2048";
+    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/794279247396864000";
 }
 
 function myGrilla(){
@@ -127,7 +127,7 @@ function myGrilla(){
     document.getElementById("discord").innerHTML = "Discord: Grilla#9143"
     document.getElementById("email").innerHTML = "Email: contact@glacierclient.net"
     document.getElementById("quote").innerHTML = '"N/A"'
-    document.getElementById("picture").src="https://cdn.discordapp.com/avatars/858336884312768512/1107fc4a0f3bde5efa7359867c08662a.png?size=2048";
+    document.getElementById("picture").src="https://api.glacierclient.net/assets/discord/pfp/858336884312768512";
 }
 /* test | will remain there cuz im lazy wont harm*/
 
