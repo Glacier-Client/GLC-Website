@@ -11,7 +11,7 @@ Each page is divided in its own folder with the following names:
 - /script.js/
 - /images/
 
-Website developed by: Duke#6377 (mostly) & SpyMiner#0001.
+Website developed by: Duke#6377 (mostly), Lumina#3384 & SpyMiner#0001.
 
  
 # !DO NOT PUSH TO LIVE!
