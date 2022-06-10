@@ -1,114 +1,275 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="description" content="1.8.9 Minecraft Client">
-    <meta name="keywords" content="Glacier, Client, GlacierClient, Minecraft, 1.8.9" />
-    <meta charset="UTF-8">
-    <script src="https://bs-community.github.io/skinview3d/js/skinview3d.bundle.js"></script>
-    <link rel="icon" href="https://www.glacierclient.net/glclogo_16x16.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/f819475713.js" crossorigin="anonymous"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Glacier Client</title>
-</head>
-<body bgcolor="#1a1a1a">
-    <header>
-        <a href="../home">
-        <img class="navlogo" src="Images/White_Glacier_Icon.png" alt="logo" >
-        </a>
-        <nav>
-            <ul class="nav__links">
-                <li><a href="../modules">MODULES</a></li>
-                <li><a href="../faq">FAQ</a></li>
-                <li><a href="../staff">STAFF</a></li>
-                <li><a href="../updates">UPDATES</a></li>
-                <li><a href="../support">SUPPORT</a></li>
-                <li><a href="../shop">SHOP</a></li>
-            </ul>
-        </nav> 
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <a class="cta" href="../download"><button>Download</button></a>
-    </header>
-        <nav class="navbar2">
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="../download" class="nav-link">Download</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../modules" class="nav-link">Modules</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../faq" class="nav-link">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../staff" class="nav-link">Staff</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../updates" class="nav-link">Updates</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../support" class="nav-link">Support</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../shop" class="nav-link">Shop</a>
-                </li>
-
-            </ul>
-        </nav>
-
-
-        <h1 class="coming">Coming Soon</h1>
-        <div class="cosmetic-preview" style="display:none;">
-            <h1>Preview</h1>
-        <canvas style="background-image: url('background.png');" id="skin_container">
-
-        </canvas>
-        <p id="cape-cosmetic">Cape: <span class="cape-name"></span></p>
-        </div>
-
-        <form id="form" onsubmit="return false;" style="display:none;">
-            <input  type="text" id="uuidInput" />
-            <input  type="submit" onclick="fetchCosmetics();" />
-        </form>
-        
-
-
-          <section class="footer">
-            <div class="social">
-                <a href="https://www.glacierclient.net/discord"><i class="fab fa-discord"></i></a>
+<html>
+	
+    <head>
+        <meta name="description" content="1.8.9 Minecraft Client">
+        <meta name="keywords" content="Glacier, Client, GlacierClient, Minecraft, 1.8.9" />
+        <meta charset="UTF-8">
+        <link rel="icon" href="https://www.glacierclient.net/glclogo_16x16.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/f819475713.js" crossorigin="anonymous"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Staff | Glacier Client</title>
+    </head>
+    <body bgcolor="#1a1a1a">
+        <header>
+            <a href="../home">
+            <img class="navlogo" src="Images/White_Glacier_Icon.png" alt="logo" >
+            </a>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="../modules">MODULES</a></li>
+                    <li><a href="../faq">FAQ</a></li>
+                    <li><a href="../staff">STAFF</a></li>
+                    <li><a href="../updates">UPDATES</a></li>
+                    <li><a href="../support">SUPPORT</a></li>
+                    <li><a href="../shop">SHOP</a></li>
+                </ul>
+            </nav> 
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-        
-            <ul class="list">
-                <li>
-                    <a href="../home">Home</a>
-                </li>
-                <li>
-                    <a href="../modules">Modules</a>
-                </li>
-                <li>
-                    <a href="../faq">FAQ</a>
-                </li>
-                <li>
-                    <a href="../staff">Staff</a>
-                </li>
-                <li>
-                    <a href="../updates">Updates</a>
-                </li>
-                <li>
-                    <a href="../shop">Shop</a>
-                </li>
-                <li>
-                    <a href="../download/">Download</a>
-                </li>
-            </ul>
-            </section>
+            <a class="cta" href="../download"><button>Download</button></a>
+        </header>
+    
+        <!-- Navigation and top-bar-->
+            <nav class="navbar2">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../download" class="nav-link">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../modules" class="nav-link">Modules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../faq" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../staff" class="nav-link">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../updates" class="nav-link">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../support" class="nav-link">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../shop" class="nav-link">Shop</a>
+                    </li>
+    
+                </ul>
+            </nav>
+            <!-- Navigation and top-bar-->
+    
+    
+            <!-- Staff  -->
+            <div class="staff" >
+                <h1 class="staff-title">STAFF</h1>
+                <i>(Press a staff too see more info about them)</i>
+    
+                <div class="staff-roles" >
 
-        <script src="script.js"></script>
-      
-</body>
+                    <div class="profile-container" id="xyz">
+                    <div class="profile" id="profile-modal">
+                        <h1 id="username">SpyMiner</h1>
+                        <h2 id="role">Owner/Developer</h2>
+                        <div class="profileContent">
+                        <div class="profileComponent">
+                        <img id="picture"src="https://api.glacierclient.net/assets/discord/pfp/418323201811152897" alt="SpyMinerPic"> 
+                        </div>
+                        <div class="profileComponent">
+                        <p id="discord">Discord: SpyMiner#0001</p>
+                        <p id="email">Email: <a href = "mailto: spyminer@glacierclient.net">spyminer@glacierclient.net</a></p>
+                        <p id="quote">"I may be drunk, Miss, but in the morning I will be sober and you will still be ugly."</p>
+                        <button class="profile-button" onclick="closeModal()">Close</button>
+                    </div>
+    
+                    </div>
+                    </div>
+                    </div>
+                    <!-- owners! -->
+                    <div class="staff-con">
+                        <h1>OWNER</h1>
+                        <hr class="rounded">
+                        <br>
+                        <!-- Spy -->
+                        <div class="staff-pfp" onclick='mySpy()'>
+                        <img class="staff-skin" src="https://visage.surgeplay.com/bust/8288a11447b84f5a83d7aefe66c46a47">
+                        <p>SpyMiner</p>
+                    </div>
+                    <!-- ugo -->
+                    <div class="staff-pfp" onclick='myYugo()'>
+                        <img class="staff-skin" src="https://visage.surgeplay.com/bust/7326a39d-720b-426c-b801-7064fa5a4c7f">
+                        <p>oYugo</p>
+                    </div>
+    
+                </div>
+                    <!-- Sr.Managers -->
+                    <div class="staff-con">
+                        <h1>SENIOR MANAGER</h1>
+                        <hr class="rounded2">
+                        <br>
+                        <!-- Sun -->
+                        <div class="staff-pfp" onclick='mySun()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/3d5d39f4-4f6b-4226-8f57-ee0b93f1df6d">
+                        <p>iBrokenSun</p>
+                        </div>
+                        <!-- Krez -->
+                        <div class="staff-pfp" onclick='myKrezio()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/cde66142-ace9-40d6-8781-5ed4a0693214">
+    
+                        <p>Krezio</p>
+                        </div>
+                    </div>
+                    <!-- Managers -->
+                    <div class="staff-con">
+                        <h1>MANAGER</h1>
+                        <hr class="rounded3">
+                        <div class="staff-pfp">
+                        
+                        </div>
+                        <br>
+                        <h1>N/A</h1>
+                        </div>
+                    </div>
+                    <!-- Admins -->
+                    <div class="staff-con">
+                        <h1>ADMIN</h1>
+                        <hr class="rounded4">
+                        <br>
+                        <!-- Felix aka german kid -->
+                        <!-- temp
+                        <div class="staff-pfp" onclick='myFelix()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/3d809a04-ac0b-44cc-b693-fa0b76b99107">
+                        <p>Felixmax_</p>
+                        
+                        </div>
+                        -->
+                        <h1>N/A</h1>
+                    
+                    </div>
+                    <!-- Devs -->
+                    <div class="staff-con">
+                        <h1>DEVELOPER</h1>
+                        <hr class="rounded5">
+                        <br>
+                        <!-- SpyMiner -->
+                    <div class="staff-pfp" onclick='mySpy()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/8288a11447b84f5a83d7aefe66c46a47">
+                        <p>SpyMiner</p>
+                        </div>
+                        <!-- Felix -->
+                        <div class="staff-pfp" onclick='myFelix()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/3d809a04-ac0b-44cc-b693-fa0b76b99107">
+                        <p>Felixmax_</p>
+                        </div>
+                        <!-- Lumina -->
+                        <div class="staff-pfp" id="Lumina">
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/1f03809f-027d-4a73-bb8c-16930d12b193">
+                        <p>Lumina</p>
+                        </div>
+                        <!-- Duke -->
+                        <div class="staff-pfp" onclick='myDuke()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/efc6c790-1b5a-4fe0-929b-204f1806efdb">
+                        <p>Amive</p>
+                        </div>
+                    </div>
+                    <!-- desginers -->
+                    <div class="staff-con">
+                        <h1>DESIGNER</h1>
+                        <hr class="rounded6">
+                        <br>
+                        <!-- Moon -->
+                        <div class="staff-pfp" onclick='myMoon()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/cbfd3e37-01be-457a-a1ff-6767bcee3530">
+                        <p>MoonStyle</p>
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Support staff -->
+                    <div class="staff-con">
+                        <h1>SUPPORT</h1>
+                        <hr class="rounded7">
+                        <br>
+                        <!-- AUstin -->
+                        <div class="staff-pfp" onclick='myAustin()'>
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/b905e249-a259-4ebe-a416-0b4b435658dd">
+                        <p>AustinFRG</p>
+                        </div>
+                        <!-- Crepper -->
+                        <div class="staff-pfp" 
+                        >
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/0bbd399f-81fe-4adf-a212-c942b2438f3f"
+                            onclick='myCreeper()'
+                            >
+                        <p>thedrcreeper</p>
+                        </div>
+                        <!-- Perionaa / Grilla -->
+                        <div class="staff-pfp" id="grilla">
+                            <img class="staff-skin" src="https://visage.surgeplay.com/bust/b6f4084b-d8ea-4074-877f-2349e163a498"
+                            onclick='myGrilla()'>
+                        <p>Perionaa</p>
+                        </div>
+    
+                    </div>
+                    <input type="hidden" name="cmd" value="_ext-enter">
+<form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+   <input  name="cmd" value="_xclick">
+   <input name="business" value="vince@engelbrecht.pro">
+   <input  name="item_name" value="GLC-Cart-{PlayerName}-{ListOfCosmetics}">
+   <input  name="currency_code" value="USD">
+                </div>
+                
+            <!-- Staff  -->
+    
+   
+                
+                
+            
+          
+              </section>
+              <section class="footer">
+                           <!-- Applications  -->
+            <div class="question">
+                <h1>Want your name to be shining up there?</h1>
+                <p>Make a staff application in our discord!</p>
+                <br>
+                <a href="https://glacierclient.net/discord"> <button class="blue-button">Join Server</button> </a>
+                <br>
+            </div>
+                <div class="social">
+                    <a href="https://www.glacierclient.net/discord"><i class="fab fa-discord"></i></a>
+                </div>
+            
+                <ul class="list">
+                    <li>
+                        <a href="../home">Home</a>
+                    </li>
+                    <li>
+                        <a href="../modules">Modules</a>
+                    </li>
+                    <li>
+                        <a href="../faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="../staff">Staff</a>
+                    </li>
+                    <li>
+                        <a href="../updates">Updates</a>
+                    </li>
+                    <li>
+                        <a href="../shop">Shop</a>
+                    </li>
+                    <li>
+                        <a href="../download/">Download</a>
+                    </li>
+                </ul>
+                </section>
+            <script src="script.js"></script>
+    </body>
+    
 </html>
