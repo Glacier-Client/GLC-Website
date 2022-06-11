@@ -1,3 +1,5 @@
+let CartArray =  []
+let finalCost = []
 
 const staffRoles = document.getElementById("staff-roles")
 const lgTitle = document.getElementById("lgTitle")
@@ -5,7 +7,20 @@ const usernameInput = document.getElementById("usernameInput") // <-- Lg = Login
 const lgInput1 = document.getElementById("lgInput1")
 const login = document.getElementById("login")
 
+const cosmetic = document.getElementById("profile-container");
+const cosmeticName = document.getElementById("username");
+const cosmeticType = document.getElementById("type");
+const cosmeticCost = document.getElementById("cost");
+
+const notification = document.getElementById("notification");
+const notiCont = document.getElementById("notiCont");
+
+const ArrayOut = document.getElementById("ArrayOut");
+const checkout = document.getElementById("checkOut");
+const total  = document.getElementById("total")
+
 function hideLogin() {
+    console.log("hideLogin")
     login.style.display = "none"
 }
 
@@ -20,6 +35,7 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     staffRoles.style.display = "none"
     
     document.getElementById("login").style.display = "block"
+    CartArray =  []
     
 }
 
@@ -78,19 +94,36 @@ skinViewer.camera.position.y = 2.75
 skinViewer.camera.position.x = -15
 
 
-function cosmeticsConstructor(_CosmName, _CosmType, _CosmCost) {
 
-    openModal()
+function cosmeticsConstructor(_CosmName, _CosmType, _CosmCost, _CosmID) { 
+
+    //openModal()
     
-    const cosmetic = document.getElementById("profile-container");
-    const cosmeticName = document.getElementById("username");
-    const cosmeticType = document.getElementById("type");
-    const cosmeticCost = document.getElementById("cost");
-
+   
+/*
     cosmeticName.textContent = _CosmName;
     cosmeticType.textContent = _CosmType;
     cosmeticCost.textContent = _CosmCost;
-    console.log("clicked")
+    
+*/
+    notification.style.display = "inline-block";
+    notification.style.animationName = "fromRight"
+    notification.style.animationDuration = "1s"
+
+    
+    setTimeout( () => {
+        notification.style.animationName = "toRight"
+        notification.style.animationDuration = "1s"
+        console.log(CartArray.join(","))
+        setTimeout(() => { notification.style.display = "none" }, 1000);
+        
+    },2250)//http://127.0.0.1:3000/shop/
+
+    notiCont.innerText = `${_CosmName} Have/Has been added to your cart`
+    CartArray.push(_CosmID); // <---- x = Cloaks | y = Wings ~~ Starts from 0
+                             // ^^^^^^^^^^^^^^^^^^^  IMPORTANT  ^^^^^^^^^^^^^^^^
+
+    
 }
 
 function closeModal() {
@@ -107,27 +140,155 @@ function fetchAndLogin() {
 	fetch("https://api.glacierclient.net/user/playerUUID/"+username)
     .then(
         response => {
+            console.log(
+                response
+            )
+            if(username.length < 2) {
+                if(response.status == 404) {
+                    lgTitle.innerText = "username is empty / Dosnt exist";
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000);
+                }
+                else{
+                
+                    lgTitle.innerText = username + " is too short"
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000);
+                }
+                    
+            }
+            else if(username.length > 16) {
+                lgTitle.innerText = username + " is too long"
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+                    
+            }
+            else {
+                setTimeout(function(){
+                    showMainPage();
+                    hideLogin()
+                }, 2000);
+                lgTitle.innerText = "Logged in as " + username
+            }
+
             return response.json();
         }
     )
     .then(
         data => {
-            const uuid= data.UUID;
+            const uuid = data.UUID;
             console.log(
                 uuid,
-                username
+                username,
             );
+            return uuid
         }
     );
-    if(!username){
-        alert("username not not vaild or or not found")
-        location.reload();
-    }
-    else {
-        setTimeout(function(){
-            showMainPage();
-            hideLogin()
-        }, 1000);
-        lgTitle.innerText = "logged in as " + username
+    
+   
+}
+
+function notiUndo(ComsName) {
+    notiCont.innerHTML = "Item Was Removed from the Cart";
+    setTimeout(() => {
+        notification.style.display = "inline-block";
+        notification.style.animationName = "fromRight"
+        notification.style.animationDuration = "1s"
+    
+        setTimeout(() => {
+            notiCont.innerHTML = "Item Was Removed from the Cart";
+            notification.style.animationName = "toRight"
+            notification.style.animationDuration = "1s"
+
+            setTimeout(() => { notification.style.display = "none" }, 1000);
+
+            CartArray.pop();        
+            console.log(CartArray.join(","))
+        },2250)
+    },3000)
+}
+
+function getNameFromID(ID) {
+    if(ID.toLowerCase().includes("x")){
+        switch(ID.toLowerCase()) {
+            case "x0":
+                return "Galaxy SUS wings"
+        }
     }
 }
+
+function getCostFromID(ID) {
+    if(ID.toLowerCase().includes("x")){
+        switch(ID.toLowerCase()) {
+            case "x0":
+                return "$42"
+        }
+    }
+}
+
+function pushToCart() {
+    if(CartArray.length > 5){
+        notiCont.innerText = "You can only have 5 items in your cart"
+        
+            notification.style.display = "inline-block";
+            notification.style.animationName = "fromRight"
+            notification.style.animationDuration = "1s"
+        
+            setTimeout(() => {
+                notification.style.animationName = "toRight"
+                notification.style.animationDuration = "1s"
+                setTimeout(() => { notification.style.display = "none" }, 1000);
+            },2250)
+
+        for (let i = 0; i = CartArray.length - 5; i++) {
+            CartArray.pop();
+        }
+        console.log("Test 1: Intializing Cart Array\n")
+        let pushableFinalArray = [];
+        let finalCost = []
+
+        for( let i = 0; i < CartArray.length; i++) {
+            console.log("Test 2: Pushing to Cart Array\n")
+            let Cost = getCostFromID(CartArray[i]);
+            let Name = getNameFromID(CartArray[i]);
+
+            let finalArray = `${Name} - ${Cost}`;
+            pushableFinalArray.push(finalArray);
+
+            finalCost.push(parseInt(Cost));
+        }
+        
+
+        console.log("Test 3: Pushed to Cart Array")
+        ArrayOut.innerHTML = pushableFinalArray.join("<br><br>");
+        
+    }
+    else{
+        console.log("Test 1: Intializing Cart Array\n")
+        let pushableFinalArray = [];
+        
+
+        for( let i = 0; i < CartArray.length; i++) {
+            console.log("Test 2: Pushing to Cart Array\n")
+            let Cost = getCostFromID(CartArray[i]);
+            let Name = getNameFromID(CartArray[i]);
+
+            let finalArray = `${Name} - ${Cost}`;
+            pushableFinalArray.push(finalArray);
+
+            finalCost.push(parseInt(Cost));
+        }
+    
+        console.log("Test 3: Pushed to Cart Array")
+        ArrayOut.innerHTML = pushableFinalArray.join("<br><br>");
+
+    }
+}
+function checkOut() {
+    console.log("Test 4: Checking Out")
+    pushToCart();
+}
+

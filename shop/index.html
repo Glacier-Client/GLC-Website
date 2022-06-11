@@ -65,154 +65,241 @@
         </li>
       </ul>
     </nav>
+    <!-- Notifications -->
+    <div
+    class="notification"
+    id="notification"
+    >
+      <p id = "notiCont">
+        
+      </p>
+      <div  class="notiUndo">
+        <button 
+        
+        onclick="notiUndo()"
+        
+        >
+          Undo
+        </button>
+      </div>
+    </div>
 
     <!-- prev -->
 
-    <div class="staff-roles Animation" id="staff-roles" onmousewheel="hideLogin()">
+    <div
+      class="staff-roles Animation" 
+      id="staff-roles"
+      onmousewheel="hideLogin()"
+    >
       <div class="profile-container">
         <div class="profile" id="profile-modal">
-          <h1 id="username">Galaxy sUs Wings</h1>
-          <h2 style="margin-top: 20px" id="type">Wings</h2>
-          <div class="profileContent">
-            <div class="profileComponent">
-              <img
-                id="picture"
-                src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-                alt="SpyMinerPic"
-              />
-            </div>
+          
+          <h2>
+            Cart:
+          </h2>
 
-            <h2 id="cost">$42.00</h2>
-            <button class="profile-button" onclick="closeModal()">Close</button>
-            <div class="profileComponent"></div>
-          </div>
+          <ul>
+            <p id="ArrayOut">
+
+            </p>
+            <p id = "total" >
+
+            </p>
+          </ul>
+          
         </div>
       </div>
 
       <h1 class="coming">Capes:</h1>
       <br />
-      <div class="cosmetic-preview grid-container" style="width: 65%">
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-            onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$")'
-          />
+      <div class="cosmetic-preview grid-container" style="width: 80%">
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor (
+                "Galaxy SUS wings", //<-- Name
+                "Wings", //<-- Type
+                "42.00$", // <-- Cost
+                "x0" //<-- ID
+              ) '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
-      </div>
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-      <br />
-      <h1 class="coming">Wings:</h1>
-      <br />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-      <div class="cosmetic-preview grid-container" style="width: 65%">
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <img
+              src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+              width="100px"
+              height="100px"
+              onclick='cosmeticsConstructor("Galaxy SUS wings", "Wings", "42.00$") '
+            />
 
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
-
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
-            width="100px"
-            height="100px"
-          />
-
-          <figcaption>
-            <h2>Among Us</h2>
-          </figcaption>
-        </figure>
+            <figcaption>
+              <h2>Among Us</h2>
+            </figcaption>
+          </figure>
+        </div>
       </div>
 
       <form id="form" onsubmit="return false;" style="display: none">
@@ -220,6 +307,12 @@
         <input type="submit" onclick="fetchCosmetics();" />
       </form>
 
+      <div
+      class="coutAlign"
+      >
+        <button id="checkOut" class="btn" onclick='checkOut()'>Calculate</button>
+      </div>
+      
       <section class="footer">
         <div class="social">
           <a href="https://www.glacierclient.net/discord"
@@ -253,9 +346,7 @@
       </section>
     </div>
 
-
-    
-    <section id = rootLogin class="Animation">
+    <section id="rootLogin" class="Animation">
       <div id="login" style="display: block">
         <div style="margin-top: 100px; text-align: center; display: block">
           <h1
@@ -272,21 +363,28 @@
               type="text"
               placeholder="Username"
               id="usernameInput"
-              style="
-                width: 300px;
-                height: 40px;
-                border-radius: 12px;
-                border: 1px solid rgba(31, 70, 199, 1);
-                margin-right: 10px;
-                background-color: rgba(255, 255, 255, 0);
-                color: white;
-              "
+              class="form"
             />
-            <button class="btn "type="button" onclick="fetchAndLogin()">Login</button>
+            <button class="btn" type="button" onclick="fetchAndLogin()">
+              Login
+            </button>
           </form>
         </div>
       </div>
     </section>
+
+    <!--<section>
+      <div id="rootPayPal" class="Animation">
+        <div id="payPalInfo">
+          <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+            <input class="form" name="cmd" value="_xclick">
+            <input  class="form"name="business" value="vince@engelbrecht.pro">
+            <input class="form" name="item_name" value="GLC-Cart-{PlayerName}-{ListOfCosmetics}">
+            <input class="form" name="currency_code" value="USD">
+          </form>     
+        </div>
+      </div>
+    </section> -->
 
     <script src="script.js"></script>
   </body>

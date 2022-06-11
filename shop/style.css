@@ -268,16 +268,18 @@ input[type=submit]{
 
 .profile{
    font-family: 'Montserrat',sans-serif;
+   font-size: 16px;
    display: none;
-   width: 100%;
-   position:fixed;
+   min-width: 20%;
+   margin-top:130px;
+   position:fixed; 
    right: 30px;
    padding: 20px;
-   border: 1mm solid rgba(31, 70, 199, 1);
+   border: 2px solid rgba(31, 70, 199, 1);
    transition: ease .5s;
    border-radius: 30px;
    overflow: hidden;
-   max-width: 400px;
+   max-width: 200px;
    max-height: 525px;
    display: inline-block;
    text-align: center;
@@ -435,6 +437,30 @@ input[type=submit]{
         }
     }
 
+    .notification {
+        animation-name: none;
+        animation-duration: none; 
+        
+        right: 150%;
+        max-width: 500px;
+        max-height: 150px;
+        border-radius: 12px;
+        border: 1px solid rgba(31, 70, 199, 1);
+        margin-right: 10px;
+        background-color: #1a1a1a;
+        color: white;
+        display: none;
+        width: 20%;
+        position: absolute;
+        right: 30px;
+        padding: 20px;
+        justify-content: right;
+        align-items: right;
+        
+    }
+    .notiUndo {
+        
+    }
 
 /* Fade in and subtle Animations */
 
@@ -521,4 +547,51 @@ input[type=submit]{
         opacity: 1;
         transform: translateY(0);
     }
+}
+.form {
+    width: 300px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(31, 70, 199, 1);
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+@keyframes fromRight {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.25);
+        transform: translateX(0);
+    }
+
+}
+@keyframes toRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+}
+
+body {
+    zoom: 95%;
+}
+
+.coutAlign {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    margin-bottom: 100px;
+    margin-top: 25px;
 }
