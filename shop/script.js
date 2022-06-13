@@ -1,5 +1,7 @@
 let CartArray =  []
 let finalCost = []
+let totalCost = 0;
+//import { lodash } from 'lodash';
 
 const staffRoles = document.getElementById("staff-roles")
 const lgTitle = document.getElementById("lgTitle")
@@ -29,7 +31,7 @@ function showMainPage() {
     
 }
 
-
+/*
 if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     
     staffRoles.style.display = "none"
@@ -38,7 +40,7 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     CartArray =  []
     
 }
-
+*/
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -145,7 +147,7 @@ function fetchAndLogin() {
             )
             if(username.length < 2) {
                 if(response.status == 404) {
-                    lgTitle.innerText = "username is empty / Dosnt exist";
+                    lgTitle.innerText = "Username is empty / Dosnt exist";
                     setTimeout(() => {
                         location.reload();
                     }, 2000);
@@ -215,7 +217,7 @@ function getNameFromID(ID) {
     if(ID.toLowerCase().includes("x")){
         switch(ID.toLowerCase()) {
             case "x0":
-                return "Galaxy SUS wings"
+                return "Galaxy Wings"
         }
     }
 }
@@ -224,10 +226,10 @@ function getCostFromID(ID) {
     if(ID.toLowerCase().includes("x")){
         switch(ID.toLowerCase()) {
             case "x0":
-                return "$42"
+                return "5"
         }
     }
-}
+}   
 
 function pushToCart() {
     if(CartArray.length > 5){
@@ -267,28 +269,30 @@ function pushToCart() {
         
     }
     else{
-        console.log("Test 1: Intializing Cart Array\n")
+        
         let pushableFinalArray = [];
         
 
         for( let i = 0; i < CartArray.length; i++) {
-            console.log("Test 2: Pushing to Cart Array\n")
+            
             let Cost = getCostFromID(CartArray[i]);
             let Name = getNameFromID(CartArray[i]);
 
-            let finalArray = `${Name} - ${Cost}`;
-            pushableFinalArray.push(finalArray);
+            let finalArray = `${Name} - $${Cost}`;
+            pushableFinalArray.push(`${finalArray}`);
 
             finalCost.push(parseInt(Cost));
         }
     
-        console.log("Test 3: Pushed to Cart Array")
         ArrayOut.innerHTML = pushableFinalArray.join("<br><br>");
-
     }
 }
 function checkOut() {
-    console.log("Test 4: Checking Out")
     pushToCart();
+    console.log(finalCost)
+    for (let i = 0; i < finalCost.length; i++) {
+        totalCost += finalCost[i];
+    }
+    document.getElementById("total").innerHTML = "<br> $"+`${totalCost}`;
 }
 

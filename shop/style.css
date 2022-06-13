@@ -595,3 +595,10 @@ body {
     margin-bottom: 100px;
     margin-top: 25px;
 }
+.coutBtn {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+
+    margin-right: 45px;
+}
