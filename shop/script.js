@@ -3,6 +3,7 @@ let finalCost = []
 let totalCost = 0;
 //import { lodash } from 'lodash';
 
+
 const staffRoles = document.getElementById("staff-roles")
 const lgTitle = document.getElementById("lgTitle")
 const usernameInput = document.getElementById("usernameInput") // <-- Lg = Login
@@ -31,7 +32,7 @@ function showMainPage() {
     
 }
 
-/*
+
 if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     
     staffRoles.style.display = "none"
@@ -40,7 +41,7 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     CartArray =  []
     
 }
-*/
+
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -72,9 +73,9 @@ let skinViewer = new skinview3d.SkinViewer({
 
 
 function fetchCosmetics() {
-    var uuid = document.getElementById("uuidInput").value;
-    skinViewer.loadSkin("https://visage.surgeplay.com/skin/"+uuid);
-    fetch("http://api.glacierclient.net/user/assets/equipedCape/txt/" + uuid)
+    var uuidF = document.getElementById("uuidInput").value;
+    skinViewer.loadSkin("https://visage.surgeplay.com/skin/"+uuidF);
+    fetch("http://api.glacierclient.net/user/assets/equipedCape/txt/" + uuidF)
         .then(response => response.json())
         .then(data =>{ 
             cosmeticSpan.textContent = response;
@@ -124,8 +125,9 @@ function cosmeticsConstructor(_CosmName, _CosmType, _CosmCost, _CosmID) {
     notiCont.innerText = `${_CosmName} Have/Has been added to your cart`
     CartArray.push(_CosmID); // <---- x = Cloaks | y = Wings ~~ Starts from 0
                              // ^^^^^^^^^^^^^^^^^^^  IMPORTANT  ^^^^^^^^^^^^^^^^
-
     
+
+    pushToCart()
 }
 
 function closeModal() {
@@ -135,7 +137,6 @@ function closeModal() {
 function openModal() {
     document.getElementById("profile-modal").style.display="inline-block";
 }
-
 
 function fetchAndLogin() {
     username = usernameInput.value;
@@ -181,12 +182,15 @@ function fetchAndLogin() {
     )
     .then(
         data => {
-            const uuid = data.UUID;
+            let uuidX = data.UUID;
             console.log(
-                uuid,
+                uuidX,
                 username,
             );
-            return uuid
+            localStorage.setItem("uuid", uuidX);
+            return uuidX
+
+            
         }
     );
     
@@ -194,6 +198,10 @@ function fetchAndLogin() {
 }
 
 function notiUndo(ComsName) {
+    CartArray.pop();
+    pushToCart()
+
+
     notiCont.innerHTML = "Item Was Removed from the Cart";
     setTimeout(() => {
         notification.style.display = "inline-block";
@@ -207,32 +215,30 @@ function notiUndo(ComsName) {
 
             setTimeout(() => { notification.style.display = "none" }, 1000);
 
-            CartArray.pop();        
+            
             console.log(CartArray.join(","))
         },2250)
     },3000)
 }
 
 function getNameFromID(ID) {
-    if(ID.toLowerCase().includes("x")){
-        switch(ID.toLowerCase()) {
-            case "x0":
-                return "Galaxy Wings"
-        }
+    switch(ID.toLowerCase()) {
+        case "555001":
+            return "Galaxy Cloak"
     }
 }
 
 function getCostFromID(ID) {
-    if(ID.toLowerCase().includes("x")){
-        switch(ID.toLowerCase()) {
-            case "x0":
-                return "5"
-        }
+    switch(ID.toLowerCase()) {
+        case "555001":
+            return "5"
     }
+    
 }   
 
 function pushToCart() {
     if(CartArray.length > 5){
+        document.getElementById("undoBtn").style.display = "none"
         notiCont.innerText = "You can only have 5 items in your cart"
         
             notification.style.display = "inline-block";
@@ -248,30 +254,8 @@ function pushToCart() {
         for (let i = 0; i = CartArray.length - 5; i++) {
             CartArray.pop();
         }
-        console.log("Test 1: Intializing Cart Array\n")
         let pushableFinalArray = [];
-        let finalCost = []
-
-        for( let i = 0; i < CartArray.length; i++) {
-            console.log("Test 2: Pushing to Cart Array\n")
-            let Cost = getCostFromID(CartArray[i]);
-            let Name = getNameFromID(CartArray[i]);
-
-            let finalArray = `${Name} - ${Cost}`;
-            pushableFinalArray.push(finalArray);
-
-            finalCost.push(parseInt(Cost));
-        }
-        
-
-        console.log("Test 3: Pushed to Cart Array")
-        ArrayOut.innerHTML = pushableFinalArray.join("<br><br>");
-        
-    }
-    else{
-        
-        let pushableFinalArray = [];
-        
+        let sum = 0;
 
         for( let i = 0; i < CartArray.length; i++) {
             
@@ -280,19 +264,54 @@ function pushToCart() {
 
             let finalArray = `${Name} - $${Cost}`;
             pushableFinalArray.push(`${finalArray}`);
-
-            finalCost.push(parseInt(Cost));
+            
+            sum += parseInt(Cost);
         }
     
         ArrayOut.innerHTML = pushableFinalArray.join("<br><br>");
+
+        document.getElementById('total').innerHTML = `<br> $${sum}`;
+        
     }
+    else{
+        
+        let pushableFinalArray = [];
+        let realPushableFinalArray = [];
+        let sum = 0;
+
+        let Item;
+
+        for( let i = 0; i < CartArray.length; i++) {
+            let Cost = getCostFromID(CartArray[i])
+
+            Item = {
+                name: getNameFromID(CartArray[i]),
+                cost: getCostFromID(CartArray[i]),
+                
+            }
+
+            pushableFinalArray.push(`${Item.name} - $${Item.cost}`);
+            realPushableFinalArray.push(`${Item}`);
+
+            
+            sum += parseInt(Cost);
+            
+        }
+        
+        ArrayOut.innerHTML = pushableFinalArray.join ("<br><br>"); 
+
+        document.getElementById('total').innerHTML = `<br> $${sum}`;
+    }
+    
+    
 }
-function checkOut() {
-    pushToCart();
-    console.log(finalCost)
-    for (let i = 0; i < finalCost.length; i++) {
-        totalCost += finalCost[i];
+function pay() {
+    let out;
+    let exportUuid = localStorage.getItem('uuid');
+    for(let i = 0; i < CartArray.length; i++) {
+        out = `id=${CartArray[i]}&`
+        
     }
-    document.getElementById("total").innerHTML = "<br> $"+`${totalCost}`;
+    location.href = "https://api.glacierclient.net/shop/payment/paypal/"+exportUuid+"?"+out;
 }
 

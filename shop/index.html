@@ -74,7 +74,7 @@
         
       </p>
       <div  class="notiUndo">
-        <button 
+        <button id="undoBtn" 
         
         onclick="notiUndo()"
         
@@ -109,9 +109,16 @@
 
           <br>
 
-          <button class="coutBtn">
-            Checkout
-          </button>
+          <div  class="coutBtn">
+            <button onclick='pay()'>
+              Checkout
+            </button>
+            <button
+            onclick='notiUndo()' style="font-size:13px">
+              Remove Item
+            </button>
+          </div>
+          
           
         </div>
       </div>
@@ -126,10 +133,10 @@
               width="100px"
               height="100px"
               onclick='cosmeticsConstructor (
-                "Galaxy Wings", //<-- Name
+                "Galaxy Cloak", //<-- Name
                 "Wings", //<-- Type
                 "5.00$", // <-- Cost
-                "x0" //<-- ID
+                "555001" //<-- ID
               ) '
             />
 
@@ -313,11 +320,7 @@
         <input type="submit" onclick="fetchCosmetics();" />
       </form>
 
-      <div
-      class="coutAlign"
-      >
-        <button id="checkOut" class="btn" onclick='checkOut()'>Calculate</button>
-      </div>
+      
       
       <section class="footer">
         <div class="social">
