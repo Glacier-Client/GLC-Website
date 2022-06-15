@@ -3,6 +3,8 @@ let finalCost = []
 let totalCost = 0;
 //import { lodash } from 'lodash';
 
+let ShopArray = []; //<-- for the coms
+
 
 const staffRoles = document.getElementById("staff-roles")
 const lgTitle = document.getElementById("lgTitle")
@@ -22,6 +24,7 @@ const ArrayOut = document.getElementById("ArrayOut");
 const checkout = document.getElementById("checkOut");
 const total  = document.getElementById("total")
 
+
 function hideLogin() {
     console.log("hideLogin")
     login.style.display = "none"
@@ -29,7 +32,7 @@ function hideLogin() {
 
 function showMainPage() {
     staffRoles.style.display = "block"
-    
+
 }
 
 
@@ -39,8 +42,8 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     
     document.getElementById("login").style.display = "block"
     CartArray =  []
-    
 }
+
 
 
 const hamburger = document.querySelector(".hamburger");
@@ -123,9 +126,7 @@ function cosmeticsConstructor(_CosmName, _CosmType, _CosmCost, _CosmID) {
     },2250)//http://127.0.0.1:3000/shop/
 
     notiCont.innerText = `${_CosmName} Have/Has been added to your cart`
-    CartArray.push(_CosmID); // <---- x = Cloaks | y = Wings ~~ Starts from 0
-                             // ^^^^^^^^^^^^^^^^^^^  IMPORTANT  ^^^^^^^^^^^^^^^^
-    
+    CartArray.push(_CosmID);
 
     pushToCart()
 }
@@ -140,59 +141,52 @@ function openModal() {
 
 function fetchAndLogin() {
     username = usernameInput.value;
-	fetch("https://api.glacierclient.net/user/playerUUID/"+username)
-    .then(
-        response => {
-            console.log(
-                response
-            )
-            if(username.length < 2) {
-                if(response.status == 404) {
-                    lgTitle.innerText = "Username is empty / Dosnt exist";
-                    setTimeout(() => {
-                        location.reload();
-                    }, 2000);
-                }
-                else{
-                
-                    lgTitle.innerText = username + " is too short"
-                    setTimeout(() => {
-                        location.reload();
-                    }, 2000);
-                }
-                    
-            }
-            else if(username.length > 16) {
-                lgTitle.innerText = username + " is too long"
-                setTimeout(() => {
-                    location.reload();
-                }, 2000);
-                    
-            }
-            else {
-                setTimeout(function(){
-                    showMainPage();
-                    hideLogin()
-                }, 2000);
-                lgTitle.innerText = "Logged in as " + username
-            }
-
-            return response.json();
+	fetch("https://api.glacierclient.net/user/playerUUID/" + username)
+    .then((response) => {
+      console.log(response);
+      if (username.length < 2) {
+        if (response.status == 404) {
+          lgTitle.innerText = "Username is empty / Dosnt exist";
+          setTimeout(() => {
+            location.reload();
+          }, 2000);
+        } else {
+          lgTitle.innerText = username + " is too short";
+          setTimeout(() => {
+            location.reload();
+          }, 2000);
         }
-    )
-    .then(
-        data => {
-            let uuidX = data.UUID;
-            console.log(
-                uuidX,
-                username,
-            );
-            localStorage.setItem("uuid", uuidX);
-            return uuidX
+      } else if (username.length > 16) {
+        lgTitle.innerText = username + " is too long";
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      } else {
+        setTimeout(function () {
+          showMainPage();
+          hideLogin();
+        }, 2000);
+        lgTitle.innerText = "Logged in as " + username;
+      }
 
-            
-        }
-    );
+      return response.json();
+    })
+    .then((data) => {
+      let uuidX = data.UUID;
+
+      if (uuidX === undefined) {
+        lgTitle.innerText = "Player never logged in";
+      }
+      console.log(uuidX, username); // <== test
+
+
+      document.getElementById("loginImg").src ="https://api.glacierclient.net/assets/minecraft/renders/face/" + uuidX;
+
+      document.getElementById("loginName").innerText = `Logged in as ${username}`;
+
+      localStorage.setItem("uuid", uuidX);
+      return uuidX;
+    });
     
    
 }
@@ -315,3 +309,96 @@ function pay() {
     location.href = "https://api.glacierclient.net/shop/payment/paypal/"+exportUuid+"?"+out;
 }
 
+function fetchShop() {
+	fetch("https://api.glacierclient.net/shop/items/listAll")
+	.then(
+		response => {
+            return response.json()
+		}
+    )
+    .then(
+
+        data => {
+           
+            dataLen = Object.keys(data).length
+           
+            console.log(data)
+            for(let i = 1; i < dataLen; i++) {
+                let obj = data[`55500${i}`];
+
+                
+                if(obj.available === 0){
+                    console.log(`${obj.item} is not available`) // <== test
+                }
+                else{
+                    objName = obj.item;
+                    let objPrice = obj.price;
+
+                    
+                    const finalItem = {
+                        name: objName,
+                        price: objPrice,
+                        src: obj.thumnailLocation,
+                    }
+    
+                    ShopArray.push(finalItem);
+                }
+               
+            }
+        }
+    );
+}
+
+function binarySearch(array, target) {
+    let low = 0;
+    let high = array.length - 1;
+    let mid;
+
+    while(low <= high) {
+        mid = Math.floor((low + high) / 2);
+        if(array[mid] === target) {
+            return mid;
+        }
+        else if(array[mid] < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+function loadCosms() {
+    fetchShop();
+    
+    setTimeout(() => {
+        console.log(ShopArray)
+        const temp = document.getElementById('cosmeticTemplate').content;
+        let template = document.importNode(temp, true);
+        
+       
+        
+        for(let i = 0; i < ShopArray.length; i++) {
+            
+
+            console.log(
+                temp,
+                template  
+            )
+
+            let obj = ShopArray[i];
+            let objName = obj.name;
+            let objPrice = obj.price;
+            let objSrc = obj.src;
+
+            template.querySelector("#cosmDisplay").textContent = `${objName} - $${objPrice}`;
+            template.querySelector('#cosmName').src = objSrc
+            
+            console.log(template)
+
+            document.getElementById('cosmetics-display').appendChild(template)
+        }
+    },2000);
+
+}   

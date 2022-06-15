@@ -430,6 +430,7 @@ input[type=submit]{
                    -webkit-transform: rotate(45deg) translate(-9px,-6px);
                    transform: rotate(45deg) translate(-9px,-6px);
                }
+               
     }
     @media only screen and (max-width:400px){
         .coming{
@@ -601,4 +602,58 @@ body {
     justify-content: center;
 
     margin-right: 45px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+}
+Change header to that
+.navlogo{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.logo-left p{
+    margin-left: 30px;
+}
+add that
+And this
+_
+.loggedin{
+    height: 100%;
+    background-color:rgba(31, 70, 199, 1);
+    width: 300px;
+    margin: 0;
+
+    color: white;
+    padding: 20px;
+}
+.loggedin h2{
+    color:white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: -50px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+
+.loggedin-right{
+    display: flex;
+    right: 10%;
+    text-align: right;
+}
+.loggedin-left{
+    float: left;
+}
+.loggedin img{
+     width: 50px;
+     border-radius: 10px;
+
 }
