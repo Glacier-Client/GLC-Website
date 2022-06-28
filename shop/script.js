@@ -1,3 +1,6 @@
+
+isHidden = false; //TODO: MAKE THSI SHIT FALS OR THE SITE WONT WORK AGAGGAGH
+
 let CartArray =  []
 let finalCost = []
 let totalCost = 0;
@@ -28,6 +31,9 @@ const total  = document.getElementById("total")
 function hideLogin() {
     console.log("hideLogin")
     login.style.display = "none"
+    staffRoles.onmousewheel = ""
+
+    isHidden = true
 }
 
 function showMainPage() {
@@ -42,8 +48,23 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     
     document.getElementById("login").style.display = "block"
     CartArray =  []
+    document.getElementById("rootBody").onload = console.log("")
+    
+   
+
+    isHidden = false;
 }
 
+function __AdminTest() {
+    let x = document.getElementById("tempCosmDisp").content;
+    console.log(x)
+    let y = x.cloneNode(true);
+    console.log(y)
+    
+    document.getElementById("cosmetics-display").appendChild(y);
+    console.log(document.getElementById("cosmetics-display"))
+    console.log("test")
+}
 
 
 const hamburger = document.querySelector(".hamburger");
@@ -67,12 +88,12 @@ function closeMenu() {
 }
 
 
-let skinViewer = new skinview3d.SkinViewer({
-    canvas: document.getElementById("skin_container"),
-    width: 350,
-    height: 400
+// let skinViewer = new skinview3d.SkinViewer({
+//     canvas: document.getElementById("skin_container"),
+//     width: 350,
+//     height: 400
     
-});
+// });
 
 
 function fetchCosmetics() {
@@ -85,20 +106,20 @@ function fetchCosmetics() {
         })
 
 }
-skinViewer.loadCape("../resources/capes/GlacierBlue.png");
-skinViewer.fov = 65;
+// skinViewer.loadCape("../resources/capes/GlacierBlue.png");
+// skinViewer.fov = 65;
 
 var uuid = "c5f74dff38cc4953994e615752bf22cd";
 
 
-
+/*
 skinViewer.camera.rotation.z = -3.08
 skinViewer.camera.rotation.y = -0.5
 skinViewer.camera.rotation.x = -3.025
 skinViewer.camera.position.z = -30
 skinViewer.camera.position.y = 2.75
 skinViewer.camera.position.x = -15
-
+*/
 
 
 function cosmeticsConstructor(_CosmName, _CosmType, _CosmCost, _CosmID) { 
@@ -176,16 +197,22 @@ function fetchAndLogin() {
 
       if (uuidX === undefined) {
         lgTitle.innerText = "Player never logged in";
+        document.getElementById("loginName").innerText = `${username} never logged in`
+        setTimeout(() => { location.reload() },2000)
+        
       }
-      console.log(uuidX, username); // <== test
+      else {
+        console.log(uuidX, username); // <== test
 
 
-      document.getElementById("loginImg").src ="https://api.glacierclient.net/assets/minecraft/renders/face/" + uuidX;
+        document.getElementById("loginImg").src ="https://api.glacierclient.net/assets/minecraft/renders/face/" + uuidX;
+  
+        document.getElementById("loginName").innerText = `Logged in as ${username}`;
+  
+        localStorage.setItem("uuid", uuidX);
+        return uuidX;
+      }
 
-      document.getElementById("loginName").innerText = `Logged in as ${username}`;
-
-      localStorage.setItem("uuid", uuidX);
-      return uuidX;
     });
     
    
@@ -322,6 +349,72 @@ function fetchShop() {
            
             dataLen = Object.keys(data).length
            
+            //cloaks 👇
+            console.log(data)
+            
+
+            for(let i = 1; i < dataLen; i++) {
+                let obj = data[`55500${i}`];
+                
+                if(obj.available === 0){
+                    console.log(`${obj.item} is not available`) // <== test
+                }
+                else{
+                    objName = obj.item;
+                    let objPrice = obj.price;
+
+                    
+                    const finalItem = {
+                        name: objName,
+                        price: objPrice,
+                        src: obj.thumnailLocation,
+                    }
+                    
+                    ShopArray.push(finalItem);
+                }
+               
+            }
+            //Ranks 👇
+
+        }
+    );
+}
+
+function binarySearch(array, target) {
+    let low = 0;
+    let high = array.length - 1;
+    let mid;
+
+    while(low <= high) {
+        mid = Math.floor((low + high) / 2);
+        if(array[mid] === target) {
+            return mid;
+        }
+        else if(array[mid] < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+
+
+function fetchShop() {
+	fetch("https://api.glacierclient.net/shop/items/listAll")
+	.then(
+		response => {
+            return response.json()
+		}
+    )
+    .then(
+
+        data => {
+           
+            dataLen = Object.keys(data).length
+           
             console.log(data)
             for(let i = 1; i < dataLen; i++) {
                 let obj = data[`55500${i}`];
@@ -349,42 +442,22 @@ function fetchShop() {
     );
 }
 
-function binarySearch(array, target) {
-    let low = 0;
-    let high = array.length - 1;
-    let mid;
-
-    while(low <= high) {
-        mid = Math.floor((low + high) / 2);
-        if(array[mid] === target) {
-            return mid;
-        }
-        else if(array[mid] < target) {
-            low = mid + 1;
-        }
-        else {
-            high = mid - 1;
-        }
-    }
-    return -1;
-}
-
 function loadCosms() {
     fetchShop();
-    
+    let temp = document.getElementById("tempCosmDisp").content;
+    let template = temp.cloneNode(true)
+    let comseticTemplate = document.getElementById("comseticTemplate");
+        
     setTimeout(() => {
         console.log(ShopArray)
-        const temp = document.getElementById('cosmeticTemplate').content;
-        let template = document.importNode(temp, true);
-        
-       
         
         for(let i = 0; i < ShopArray.length; i++) {
             
 
             console.log(
                 temp,
-                template  
+                template 
+                //tests ^^^
             )
 
             let obj = ShopArray[i];
@@ -392,12 +465,12 @@ function loadCosms() {
             let objPrice = obj.price;
             let objSrc = obj.src;
 
-            template.querySelector("#cosmDisplay").textContent = `${objName} - $${objPrice}`;
-            template.querySelector('#cosmName').src = objSrc
+            template.querySelector(".cosmDisplay").src = objSrc;
+            template.querySelector('.cosmName').innerText = `${objName} - $${objPrice}`      //elements ^^^^
             
-            console.log(template)
+            console.log(template) // <-- test to check if the template is correct
 
-            document.getElementById('cosmetics-display').appendChild(template)
+            document.getElementById('cosmetics-display').appendChild(template) //apending the root div
         }
     },2000);
 

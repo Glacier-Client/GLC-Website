@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop | Glacier Client</title>
   </head>
-  <body bgcolor="#1a1a1a">
+  <body bgcolor="#1a1a1a" onload='location.reload();' id="rootBody">
     <header>
       <a href="../home">
         <img class="navlogo" src="Images/White_Glacier_Icon.png" alt="logo" />
@@ -138,7 +138,10 @@
       <br />
 
       <!-- Cosmetics Display -->
-      <div class="cosmetic-preview grid-container" style="width: 80%" id="cosmetics-display">
+      <div class="cosmetic-preview grid-container" style="width: 80%" id="cosmetics-display"> <!--cosmetic-preview grid-container-->
+        <button onclick='loadCosms()'>
+          hey
+        </button>
         <div>
           <figure>
             <img
@@ -154,19 +157,51 @@
             />
 
             <figcaption>
-              <h2>Among Us</h2>
+              <h2 style="color: white;">Among Us</h2>
             </figcaption>
           </figure>
+
+
+
+
+          <!-- Cosmetic Template -->
+          <template id="tempCosmDisp">
+
+            <figure id="cosmDisp">
+              <img
+                src="https://pioneeroptimist.com/wp-content/uploads/2021/03/among-us-6008615_1920-838x900.png"
+                width="100px"
+                height="100px"
+                onclick='cosmeticsConstructor (
+                  "Galaxy Cloak", //<-- Name
+                  "Wings", //<-- Type
+                  "5.00$", // <-- Cost
+                  "555001" //<-- ID
+                ) '
+                class="cosmDisplay"
+              />
+  
+              <figcaption>
+                <h2 style="color: white;" class="cosmName" >Among Us</h2>
+              </figcaption>
+            </figure>
+          </template>
+
+        
         </div>
       </div>
 
-        <!-- Cosmetic Template -->
-        <template id="cosmeticTemplate">
+
+
+
+
+        
+        <!-- template id="cosmeticTemplate">
 
           <div>
             <figure>
               <img
-                id="cosmDisplay"
+                
                 src=" "
                 width="100px"
                 height="100px"
@@ -174,12 +209,13 @@
               />
   
               <figcaption>
-                <h2 id="cosmName"> </h2>
+                <h2 class="cosmName"> </h2>
               </figcaption>
             </figure>
+
           </div>
 
-        </template>
+        </template -->
 
       <form id="form" onsubmit="return false;" style="display: none">
         <input type="text" id="uuidInput" />
