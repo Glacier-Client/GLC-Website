@@ -1,5 +1,5 @@
 
-isHidden = false; //TODO: MAKE THSI SHIT FALS OR THE SITE WONT WORK AGAGGAGH
+isHidden = false
 
 let CartArray =  []
 let finalCost = []
@@ -52,7 +52,7 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     
    
 
-    isHidden = true;
+    isHidden = false;
 }
 
 function __AdminTest() {
